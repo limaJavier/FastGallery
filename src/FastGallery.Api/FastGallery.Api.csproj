@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <ItemGroup>
     <ProjectReference Include="..\FastGallery.Application\FastGallery.Application.csproj" />
@@ -15,6 +15,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>08a67d03-9070-4a4d-ab3f-6e3da0a63188</UserSecretsId>
   </PropertyGroup>
 
 </Project>

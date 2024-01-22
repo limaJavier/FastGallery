@@ -3,16 +3,24 @@ using System.Security.Claims;
 using System.Text;
 using FastGallery.Application.Interfaces.Authentication;
 using FastGallery.Domain.Entities;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
 namespace FastGallery.Infrastructure.Authentication;
 
 public class JwtTokenGenerator : IJwtTokenGenerator
 {
+    private readonly JwtSettings _jwtSettings;
+
+    public JwtTokenGenerator(IOptions<JwtSettings> jwtSettingsOptions)
+    {
+        _jwtSettings = jwtSettingsOptions.Value;
+    }
+
     public string GenerateToken(User user)
     {
         var key = new SigningCredentials(
-            new SymmetricSecurityKey(Encoding.UTF8.GetBytes("000000000somePassword11111111123456789")),
+            new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret)),
             SecurityAlgorithms.HmacSha256
         );
 
@@ -26,9 +34,9 @@ public class JwtTokenGenerator : IJwtTokenGenerator
 
         var securityToken = new JwtSecurityToken(
             signingCredentials: key,
-            issuer: "FastGallery",
-            audience: "FastGallery",
-            expires: DateTime.UtcNow.AddMinutes(60),
+            issuer: _jwtSettings.Issuer,
+            audience: _jwtSettings.Audience,
+            expires: DateTime.UtcNow.AddMinutes(_jwtSettings.MinutesToExpire),
             claims: claims
         );
 
