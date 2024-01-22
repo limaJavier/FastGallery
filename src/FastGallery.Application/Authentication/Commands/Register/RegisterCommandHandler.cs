@@ -19,8 +19,6 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Authentic
 
     public async Task<AuthenticationResult> Handle(RegisterCommand command, CancellationToken cancellationToken)
     {
-       
-
         // TODO: Use a mapper to create user
         // Create user
         var user = new User()
@@ -35,11 +33,9 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Authentic
         // Store user into DB
         _userRepository.Add(user);
 
-        // Create token
+        // Generate token
         var token = _jwtTokenGenerator.GenerateToken(user);
 
-
-        // TODO: Use a mapper to create result
         // Create result
         var result = new AuthenticationResult(
             user.Email,
