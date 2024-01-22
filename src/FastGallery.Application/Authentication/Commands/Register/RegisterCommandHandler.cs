@@ -19,6 +19,9 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Authentic
 
     public async Task<AuthenticationResult> Handle(RegisterCommand command, CancellationToken cancellationToken)
     {
+        if(_userRepository.GetUserByEmail(command.Email) is not null)
+            throw new Exception("Email has been already registered");
+
         // TODO: Use a mapper to create user
         // Create user
         var user = new User()
