@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastGallery.Application", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastGallery.Domain", "FastGallery.Domain\FastGallery.Domain.csproj", "{FBA67950-C2F7-4BFD-92EE-A7B45138BD2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastGallery.Contracts", "FastGallery.Contracts\FastGallery.Contracts.csproj", "{9C8469CD-140F-4959-A030-9C95A2C11682}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastGallery.Infrastructure", "FastGallery.Infrastructure\FastGallery.Infrastructure.csproj", "{B54DF20A-3EDB-4853-BF3D-353FC89259A1}"
 EndProject
 Global

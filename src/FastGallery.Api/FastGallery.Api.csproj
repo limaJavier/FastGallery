@@ -2,7 +2,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FastGallery.Application\FastGallery.Application.csproj" />
-    <ProjectReference Include="..\FastGallery.Contracts\FastGallery.Contracts.csproj" />
     <ProjectReference Include="..\FastGallery.Infrastructure\FastGallery.Infrastructure.csproj" />
   </ItemGroup>
 

@@ -1,7 +1,7 @@
 using FastEndpoints;
+using FastGallery.Api.Contracts.Authentication;
 using FastGallery.Application.Authentication.Common;
 using FastGallery.Application.Authentication.Queries.Login;
-using FastGallery.Contracts.Authentication;
 using MediatR;
 
 namespace FastGallery.Api.Features.Authentication.Register;

@@ -1,4 +1,4 @@
-namespace FastGallery.Contracts.Authentication;
+namespace FastGallery.Api.Contracts.Authentication;
 
 public record RegisterRequest(
     string FirstName,
